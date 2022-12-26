@@ -11,14 +11,11 @@ export function getPerson(): IPersonData {
     return {
         name: 'Petr',
         secondName: 'Smith',
-        age: '7',
+        age: 7,
     };
 }
 
-export interface IStudentData {
-    name: string;
-    secondName: string;
-    age: number;
+export interface IStudentData extends IPersonData {
     phone?: string;
 }
 
@@ -27,12 +24,23 @@ export interface IStudentData {
 Данные должны храниться в объектах, соответствующих интерфейсу `IStudentData`.
  */
 export function getStudentsData(): IStudentData[] {
-    /**
-     * Данные студентов которые нужно передать:
-     *
-     * 1. Ivan Petrov 20 лет +7(555)555-55-50
-     * 2. Stepan Petrov 19 лет +7(555)555-55-51
-     * 3. Petr Ivanov 19 лет
-     *
-     */
+    return [
+        {
+            name: 'Ivan',
+            secondName: 'Petrov',
+            age: 20,
+            phone: '+7(555)555-55-50',
+        },
+        {
+            name: 'Stepan',
+            secondName: 'Petrov',
+            age: 19,
+            phone: '+7(555)555-55-51',
+        },
+        {
+            name: 'Petr',
+            secondName: 'Ivanov',
+            age: 19,
+        },
+    ];
 }
